@@ -1,0 +1,17 @@
+html, body{
+    height: 100%;
+}
+
+body{
+    min-width: 320px;
+}
+
+.wrapper{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex-grow: 1;
+}
