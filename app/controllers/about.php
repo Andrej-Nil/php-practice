@@ -1,4 +1,5 @@
 <?php
+
 $title = 'About';
 $post =
     '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda cum dolor esse explicabo officia qui quibusdam saepe tenetur vel.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda cum dolor esse explicabo officia qui quibusdam saepe tenetur vel.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda cum dolor esse explicabo officia qui quibusdam saepe tenetur vel.</p>';
@@ -32,4 +33,4 @@ $recent_posts = [
 ];
 
 
-require_once 'about.tpl.php';
+require_once VIEWS . '/about.tpl.php';
