@@ -1,6 +1,6 @@
 <footer class="footer">
-    <div class="p3 mb-2 bg-body text-dark text-center">
-        <div class="p-3 mb-2 bg-dark text-white"><p class="">&copy;  Copyright <?= date('Y') ?></p></div>
+    <div class="p3 bg-body text-dark text-center">
+        <div class="p-3 bg-dark text-white"><p class="">&copy;  Copyright <?= date('Y') ?></p></div>
     </div>
 </footer>
 </div>
