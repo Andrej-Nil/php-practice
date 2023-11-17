@@ -1,9 +1,15 @@
 <?php
 
-class Db
+namespace myfrm;
+
+use PDO;
+use PDOException;
+use PDOStatement;
+
+final class Db
 {
     private $connection;
-    private $stmt;
+    private PDOStatement $stmt;
     private static $instance = null;
 
     private function __construct(){}
@@ -19,6 +25,7 @@ class Db
 
     public function getConnection(array $db_config)
     {
+
         $dns = "mysql:host={$db_config['host']};dbname={$db_config['dbname']};charset={$db_config['charset']}";
 
         try {
@@ -33,8 +40,13 @@ class Db
 
     public function query($query, $params = [])
     {
-        $this->stmt = $this->connection->prepare($query);
-        $this->stmt->execute($params);
+        try{
+            $this->stmt = $this->connection->prepare($query);
+            $this->stmt->execute($params);
+
+        }catch (PDOException $e){
+            return false;
+        }
         return $this;
     }
 
