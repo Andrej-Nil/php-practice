@@ -20,7 +20,7 @@ function dd($data)
     die;
 }
 
-function abort($code = 404)
+function abort($code = 404, $title = '404 - not find')
 {
     http_response_code($code);
     require VIEWS . "/errors/{$code}.tpl.php";
@@ -56,4 +56,15 @@ function redirect($url = '') {
 
     header("location: {$redirect}");
     die;
+}
+
+function get_alerts(){
+    if(!empty($_SESSION['success'])){
+        require_once VIEWS . '/incs/alert_success.php';
+        unset($_SESSION['success']);
+    }
+    if(!empty($_SESSION['error'])){
+        require_once VIEWS . '/incs/alert_error.php';
+        unset($_SESSION['error']);
+    }
 }

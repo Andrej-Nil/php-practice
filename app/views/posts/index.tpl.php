@@ -6,9 +6,9 @@
                     <?php foreach ($posts as $post): ?>
                         <div class="card mb-3">
                             <div class="card-body">
-                                <h5 class="card-title"><a href="post?id=<?= $post['id'] ?>""><?= $post['title'] ?></a></h5>
+                                <h5 class="card-title"><a href="posts?id=<?= $post['id'] ?>"><?= $post['title'] ?></a></h5>
                                 <p class="card-text"><?= $post['excerpt'] ?></p>
-                                <a href="post?id=<?= $post['id'] ?>" class="btn btn-primary">Перейти в <?= $post['title'] ?></a>
+                                <a href="posts?id=<?= $post['id'] ?>" class="btn btn-primary">Перейти в <?= $post['title'] ?></a>
                             </div>
                         </div>
                     <?php endforeach; ?>
