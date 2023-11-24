@@ -68,3 +68,11 @@ function get_alerts(){
         unset($_SESSION['error']);
     }
 }
+
+function db(): \myfrm\Db {
+    return \myfrm\App::get(\myfrm\Db::class);
+}
+
+function check_auth() {
+    return isset($_SESSION['user']);
+}

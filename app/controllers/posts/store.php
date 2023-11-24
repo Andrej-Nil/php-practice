@@ -2,7 +2,7 @@
 
 use myfrm\Validator;
 
-global $db;
+$db = \myfrm\App::get(\myfrm\Db::class);
 
 
 require_once CORE . '/classes/Validator.php';
