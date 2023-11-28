@@ -14,9 +14,7 @@
                     <?php endforeach; ?>
 <hr/>
 
-                    <?php for($i = 1; $i <= $pages_cnt; $i++) : ?>
-                        <a href='?page=<?= $i?>$i}'><?= $i ?></a>/
-                   <?php endfor; ?>
+                    <?= $pagination ?>
                 </div>
                 <?php require VIEWS . '/incs/sidebar.php' ?>
             </div>

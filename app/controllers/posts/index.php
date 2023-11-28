@@ -13,23 +13,9 @@ $pagination = new \myfrm\Pagination(
     $total
 );
 
-print_arr($pagination);
-die;
-$per_page = 3;
-$total = db()->query("SELECT COUNT(*) FROM posts ")->getCount();
-$pages_cnt = ceil($total / $per_page);
 
-$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$start = $pagination->getStart();
 
-if($page < 1) {
-    $page = 1;
-}
-
-if($page > $pages_cnt){
-    $page = $pages_cnt;
-}
-
-$start = ($page - 1) * $per_page;
 
 $posts = $db->query("SELECT * FROM posts ORDER BY id DESC LIMIT $start, $per_page")->findAll();
 
