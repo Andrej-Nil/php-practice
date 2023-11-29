@@ -1,10 +1,13 @@
 <?php
 
 define("ROOT", dirname(__DIR__));
-define("WWW", ROOT . '/public');
-define("CONFIG", ROOT . '/config');
-define("CORE", ROOT . '/vendor/myfrm/core');
-define("APP", ROOT . '/app');
-define("CONTROLLERS", APP . '/controllers');
-define("VIEWS", APP . '/views');
-define("PAHT", 'http://php-practice.local.ru');
+const WWW = ROOT . '/public';
+const CONFIG = ROOT . '/config';
+const CORE = ROOT . '/vendor/myfrm/core';
+const APP = ROOT . '/app';
+const CONTROLLERS = APP . '/controllers';
+const VIEWS = APP . '/views';
+const PATH = 'http://php-practice.local.ru';
+
+const LOGIN_PAGE = PATH . '/login';
+const ERRORS_LOG = ROOT . '/errors.log';

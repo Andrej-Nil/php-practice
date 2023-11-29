@@ -3,6 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
+                    <?= $pagination ?>
                     <?php foreach ($posts as $post): ?>
                         <div class="card mb-3">
                             <div class="card-body">
