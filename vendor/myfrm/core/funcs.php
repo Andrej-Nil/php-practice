@@ -27,12 +27,28 @@ function abort($code = 404, $title = '404 - not find')
     die;
 }
 
-function load($fillable = [])
+function load($fillable = [], $post = true)
 {
+
+    $load_data = $post ? $_POST : $_GET;
     $data = [];
-    foreach ($_POST as $k => $v) {
-        if (in_array($k, $fillable)) {
-            $data[$k] = trim($v);
+//    foreach ($load_data as $k => $v) {
+//        if (in_array($k, $fillable)) {
+//            $data[$k] = trim($v);
+//        }
+//    }
+
+    foreach ($fillable as $name){
+        if(isset($load_data[$name])){
+            if(!is_array($load_data[$name])){
+
+                $data[$name] =  trim($load_data[$name]);
+            }else{
+                $data[$name] = $load_data[$name];
+            }
+
+        } else {
+            $data[$name] = '';
         }
     }
 
@@ -75,4 +91,9 @@ function db(): \myfrm\Db {
 
 function check_auth() {
     return isset($_SESSION['user']);
+}
+
+function get_file_ext($file_name){
+    $file_ext = explode( '.', $file_name);
+    return  end($file_ext);
 }

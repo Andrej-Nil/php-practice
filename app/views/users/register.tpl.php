@@ -5,7 +5,7 @@
                 <div class="col-md-6 offset-md-3">
                     <h3>Регистрация</h3>
 
-                    <form action="" method="post">
+                    <form action="" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
                             <input name="name" type="text" class="form-control" id="name" placeholder="Name" value="<?= old('name') ?>">
@@ -23,6 +23,14 @@
                             <input name="password" type="password" class="form-control" id="email" placeholder="Password" value="<?= old('password') ?>">
                             <?= isset($validation) ? $validation->listErrors('password') : '' ?>
                         </div>
+
+                        <div class="mb-3">
+                            <label for="avatar" class="form-label">Avatar</label>
+                            <input name="avatar" type="file" class="form-control" id="avatar"  value="<?= old('name') ?>">
+                            <?= isset($validation) ? $validation->listErrors('avatar') : '' ?>
+                        </div>
+
+
 
 
 
